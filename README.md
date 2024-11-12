@@ -1,1 +1,1 @@
-# competitive-programming
+Competitive programming notebook
