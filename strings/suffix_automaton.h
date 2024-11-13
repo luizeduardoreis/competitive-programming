@@ -1,12 +1,12 @@
 /*
-    suffix automaton
+    suffix automaton 
     status: not tested
 */
 
 struct suffix_automaton {
     int n, id = 2, last = 1;
     vi len, link;
-    vector<map<char, int>> to;
+    vector<map<char, int>> to; // if n is up to 1e6 use vector<array<int, 26>>
 
     suffix_automaton(string const & s) : n(2 * s.size() + 2), len(n), link(n), to(n) {
         for (auto & c : s)
