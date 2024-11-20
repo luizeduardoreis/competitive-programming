@@ -9,7 +9,7 @@ struct segment_tree {
 		node() {
 			// define default constructor
 		}
-		node operator +(node other) {
+		friend node operator +(node a, node b) {
 			// define merge
 		}
 	};
