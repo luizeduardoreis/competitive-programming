@@ -16,15 +16,15 @@ struct segment_tree {
 	vector<node> t;
 	segment_tree(int n) : t(2 * n) {}
 	void update(int p, node val) {
-		for (t[p += n] = val; p > 1; p >>= 1)
-			t[p >> 1] = t[((p & 1) ? p ^ 1 : p)] + t[((p & 1) ? p : p ^ 1)];
+		for (t[p += n] = val; p >>= 1;)
+			t[p] = t[p >> 1] + t[p >> 1 | 1];
 	}
 	node query(int l, int r) {
 		node resl();
 		node resr();
 		for (l += n, r += n; l < r; l >>= 1, r >>= 1) {
 			if (l&1) resl = resl + t[l++];
-			if (r&1) resr = resr + t[--r];
+			if (r&1) resr = t[--r] + resr;
 		}
 		return resl + resr;
 	}
