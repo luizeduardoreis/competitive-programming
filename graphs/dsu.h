@@ -4,8 +4,8 @@
 */
 
 struct dsu {
-	vi p;
-	dsu(int n) : p(n, -1) {}
+	vi e;
+	dsu(int n) : e(n, -1) {}
 	int get(int a) { e[a] < 0 ? a : e[a] = get(e[a]); }
 	bool merge(int a, int b) {
 		a = get(a), b = get(b);
