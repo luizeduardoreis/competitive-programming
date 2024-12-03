@@ -17,7 +17,7 @@ struct segment_tree {
 	segment_tree(int n) : t(2 * n) {}
 	void update(int p, node val) {
 		for (t[p += n] = val; p >>= 1;)
-			t[p] = t[p >> 1] + t[p >> 1 | 1];
+			t[p] = t[p << 1] + t[p << 1 | 1];
 	}
 	node query(int l, int r) {
 		node resl();
