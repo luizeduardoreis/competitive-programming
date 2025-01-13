@@ -13,6 +13,7 @@ struct bit {
 		int res = 0;
 		for (; p >= 0; p = (p&(p+1))-1)
 			res += t[p];
+		return res;
 	}
 	int query(int l, int r) { return query(r) - query(l-1); }
 };
